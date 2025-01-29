@@ -1,0 +1,132 @@
+html{
+    scroll-behavior: smooth;
+    text-align: center;
+    background-color: orange;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Ga Maamli", Verdana, sans-serif; /* Ga Maamli is a very sharp looking font which goes well for a title of a rock song */
+    padding: 5px;
+    color:black;
+}
+
+/* adjusting the font-sizes to differ the headings from each other */
+h1{
+    font-size:2.7em;
+}
+
+h2{
+    font-size:2.5em;
+}
+h3{
+    font-size:1.3em;
+    text-shadow: 1px 1px 2px black;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    font-family: "Special Elite", 'Courier New', Courier, monospace;
+}
+
+/* Amatic SC is used for the headings of each verse and the chorus, it's better to do it here as the lyric font would take over if I adjusted the h3 to amatic sc first */
+section{
+    font-family: "Amatic SC", Georgia, serif;
+    font-size: 3.5em;
+    line-height: 2.5; /* Gives some spacing between lines so each section is better spaced out */
+    border: 3px solid black; /* to help seperate the sections from each other so the contrasting images are not as much of a slap in the face. */
+}
+
+/* all the styling for the chorus that is reused 3 times throughout the song. Chorus inherits the Amatic SC font */
+.chorus{
+    background-image: url("../imgs/clouds.jpg"); 
+    background-size: cover;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 3px black; /* to make the chorus stand out better against the cloud background */
+    color: yellow; /* looks nice with the light blue of the clouds, and fits the tone of the chorus */
+}
+
+/* Standard styling for all the verses. Majority of the verses are in a positive tone so this selector handles the standard for positive tone, later selectors handle specific cases */
+#verse-1, #verse-2, #verse-3{ 
+    font-family: "Mountains of Christmas", Tahoma, sans-serif;
+    font-size: 2.1em; 
+    background-image: url("../imgs/sunshine.jpg");
+    background-size: cover;
+    color: lightcoral; /* Light coral complements the warm background well and fits the tone of the verses it is used in */
+    text-shadow: 3px 1px 2px black; /* to have the text stand out on the bright background */
+}
+
+section#verse-2 > div:nth-child(2){
+    border-bottom: 4px dashed black; /* to divide the tones of the second verse better */
+}
+
+section#verse-2 > div:last-child {
+    font-family: "Special Elite", 'Courier New', Courier, monospace; 
+    font-size: 0.7em; /* Special Elite is a larger font so its readable at a less than standard font-size. Did this so it contrasts with the mountains of christmas font better */
+    padding: 50px; /* expands the second half so the background covers more space and doesn't look too short when compared with the first half of the verse */
+    color: lightblue; /* light blue to fit the tone while still being readable off of the dark background */
+    background-image: url("../imgs/rainStorm.jpg");
+    background-size: cover; 
+}
+
+/* start of verse 3 is a negative tone, so it's better the entire section starts with the dark sky background so it isn't abruptly switching as much */
+#verse-3{ 
+    background-image: url("../imgs/darkSky.jpg");
+    background-size: cover;
+}
+
+section#verse-3 > div:nth-child(2) {
+    font-family: "Special Elite", 'Courier New', Courier, monospace;
+    font-size: 0.7em;
+    color: lightskyblue; /* light sky blue to fit the tone while still being readable off of the dark background */
+    text-shadow: 3px 1px 2px black; /* a text outline is necessary to make the text stand out against the background */
+    border-bottom: 4px dashed black;
+}
+
+section#verse-3 > div:last-child{
+    background-image: url("../imgs/sunshine.jpg");
+    background-size: cover;
+    padding: 50px; /* expands the second half so the background covers more space and doesn't look too short when compared with the first half of the verse */
+}
+
+/* for words that needed to be brought higher with a shadow for effect. Rotation further displays this */
+.supWord{
+    vertical-align: super;
+    text-shadow: 1px 25px 2px black;
+    transform: rotate(-5deg); /* Rotates the text 45 degrees */
+    display: inline-block;
+}
+
+/* for words that needed to be brought lower with a negative shadow for additional effect. Rotation further displays this */
+.subWord{
+    vertical-align:sub;
+    color:black; /* without an outline, most words are hard to see in the default color, so going with black is necessary to make the text readable */
+    text-shadow: 2.5px -20px 3px black; /* Creates a reverse shadow effect to further signify that the word is lower */
+    transform: rotate(5deg); 
+    display: inline-block;
+}
+
+/* yellow is still clearly visible with the chorus background, so keeping the lowered word as yellow works best */
+.chorus .subWord{
+    color:yellow;
+}
+
+/* for lyrics with a much more negative tone */
+span.negativeTone{
+    color: crimson;
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+/* for lyrics with a much lighter tone */
+span.positiveTone{
+    color: green;
+    text-shadow: 1px 1px 5px lime;
+    font-weight: 900;
+}
+footer{
+    font-size: 2.5em;
+}
+
+/* remaining things to do:
+change i to mark
+*/
